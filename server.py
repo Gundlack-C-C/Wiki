@@ -28,7 +28,7 @@ def random():
 if __name__ == '__main__':
 
     try:
-        LOG = "./.log/PDF_KEYWORD_SERVER.log"
+        LOG = "./.log/wiki-server.log"
 
         # Setup Argument Parser
         parser = argparse.ArgumentParser(description='Argument Parser')
