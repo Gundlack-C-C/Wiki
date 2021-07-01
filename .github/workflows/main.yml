@@ -24,8 +24,8 @@ jobs:
       - name: Build and push to Heroku
         env:
           HEROKU_API_KEY: ${{ secrets.HEROKU_API_KEY }}
-        run: heroku container:push -a ${{ secrets.HEROKU_APP_NAME_PROD }} web 
+        run: heroku container:push -a ${{ secrets.HEROKU_APP_NAME }} web 
       - name: Release the app
         env:
           HEROKU_API_KEY: ${{ secrets.HEROKU_API_KEY }}
-        run: heroku container:release -a ${{ secrets.HEROKU_APP_NAME_PROD }} web 
+        run: heroku container:release -a ${{ secrets.HEROKU_APP_NAME }} web 
