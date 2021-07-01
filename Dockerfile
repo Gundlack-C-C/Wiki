@@ -6,7 +6,5 @@ COPY ./requirements.txt /usr/src/app/requirements.txt
 WORKDIR /usr/src/app
 RUN pip install -r requirements.txt
 
-ENTRYPOINT ["python3"]
-CMD ["server.py"]
-
-EXPOSE 5001
+COPY ./docker-entrypoint.sh /usr/src/app/dockerInit/
+ENTRYPOINT ["/usr/src/app/dockerInit/docker-entrypoint.sh"]
