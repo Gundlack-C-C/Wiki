@@ -40,7 +40,8 @@ if __name__ == '__main__':
         # Check if production is set
         PRODUCTION = args.production
         os.environ['PRODUCTION'] = str(PRODUCTION)
-
+        port = int(os.environ.get('PORT', 5001))
+        
         if not os.path.exists(os.path.abspath(os.path.dirname(args.LOGFILE))):
                 os.makedirs(os.path.abspath(os.path.dirname(args.LOGFILE)))
 
@@ -53,7 +54,7 @@ if __name__ == '__main__':
         logging.info(f"Starting Server with [{args}]")
     
         # Start Server
-        app.run(host="0.0.0.0", debug=False, port = 5001)
+        app.run(host="0.0.0.0", debug=False, port = port)
 
     except Exception as e:
         logging.error(e)
