@@ -12,11 +12,13 @@ def get_article_from_page(page):
         "id": page['titles']['canonical'] 
     }
 
+
 def get_wiki(title):
     S = requests.Session()
     URL = f"{wiki_api}page/summary/{title}"
     R = S.get(url=URL)
     page = R.json()
+    S.close()
     return get_article_from_page(page)
 
 def get_random_wiki():
@@ -24,6 +26,7 @@ def get_random_wiki():
     URL = f"{wiki_api}page/random/summary"
     R = S.get(url=URL)
     page = R.json()
+    S.close()
     return get_article_from_page(page)
 
 
