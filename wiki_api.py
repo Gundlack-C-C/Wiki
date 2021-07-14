@@ -27,3 +27,18 @@ def get_random_wiki():
     return get_article_from_page(page)
 
 
+if __name__ == '__main__':
+    # Example: Random Article
+    print("######")
+    print("Get random article from Wikipedia.en ...")
+    article = get_random_wiki()
+    print(article)
+    print("######")
+
+    # Example: Hello World Article
+    print()
+    print("######")
+    print("Get article from Wikipedia.en by Title ['""Hello,_World!""_program'] ...")
+    article = get_wiki('"Hello,_World!"_program')
+    print(article)
+    print("######")
