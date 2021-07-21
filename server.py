@@ -51,8 +51,8 @@ if __name__ == '__main__':
                         format='%(asctime)s %(levelname)-8s %(message)s')
         logging.getLogger().addHandler(logging.StreamHandler(sys.stdout))
 
-        logging.info(f"Starting Server with [{args}]")
-    
+        logging.info(f"Starting Server with [{args}] and test")
+        
         # Start Server
         app.run(host="0.0.0.0", debug=False, port = port)
 
