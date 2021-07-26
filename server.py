@@ -52,7 +52,7 @@ if __name__ == '__main__':
         logging.getLogger().addHandler(logging.StreamHandler(sys.stdout))
 
         logging.info(f"Starting Server with [{args}]")
-    
+        
         # Start Server
         app.run(host="0.0.0.0", debug=False, port = port)
 
